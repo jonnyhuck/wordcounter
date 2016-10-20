@@ -1,0 +1,7 @@
+*.txt
+bin/
+include/
+lib/
+*.csv
+*.json
+.Python
