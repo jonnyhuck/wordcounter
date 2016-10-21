@@ -44,6 +44,13 @@ Help:
 python wordcloud_generator.py -h
 ```
 
+##Outputs:
+
+The script outputs two files:
+
+* **noun_counts.csv**: a report with each noun and its number of occurrences (minimum 2)
+* **word_cloud.txt**: a text file to produce a word cloud of the nouns, for use with [**Wordle**](http://www.wordle.net/create) or similar.
+
 
 
 
