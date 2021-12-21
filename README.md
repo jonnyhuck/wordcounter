@@ -1,8 +1,8 @@
-#Word Counter
+# Word Counter
 
 A simple script 
 
-##Installation:
+## Installation:
 Word counter is just a Python script, so does not need installing per se. It does, however, depend upon the [NLTK](http://www.nltk.org/) library, which can be installed with:
 
 ```
@@ -24,7 +24,7 @@ and then download:
 
 That should be everything that you need to run it.
 
-##Usage:
+## Usage:
 
 Normal usage:
 
@@ -44,7 +44,7 @@ Help:
 python wordcloud_generator.py -h
 ```
 
-##Outputs:
+## Outputs:
 
 The script outputs two files:
 
