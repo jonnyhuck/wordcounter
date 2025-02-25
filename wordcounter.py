@@ -14,7 +14,7 @@ def getWordCloud(inputFile, quiet):
 
 
 	if quiet == False:
-		print "starting..."
+		print ("starting...")
 
 	#get the data from a file
 	file_path = inputFile
@@ -24,7 +24,7 @@ def getWordCloud(inputFile, quiet):
 
 
 	if quiet == False:
-		print "parsing text..."
+		print ("parsing text...")
 
 	#split sentences & tokens
 	sentences = nltk.tokenize.sent_tokenize(text)
@@ -45,7 +45,7 @@ def getWordCloud(inputFile, quiet):
 
 
 	if quiet == False:
-		print "extracting nouns..."
+		print ("extracting nouns...")
 
 	#loop through parts of speech
 	for(token,pos) in pos_tagged_tokens:
@@ -64,7 +64,7 @@ def getWordCloud(inputFile, quiet):
 	
 	
 	if quiet == False:
-		print "lemmatising..."
+		print ("lemmatising...")
 
 	# lemmatize words
 	lemmatizer = WordNetLemmatizer()
@@ -78,7 +78,7 @@ def getWordCloud(inputFile, quiet):
 
 
 	if quiet == False:
-		print "counting word frequencies..."
+		print ("counting word frequencies...")
 
 	#count word frequency
 	wc = {}
@@ -97,7 +97,7 @@ def getWordCloud(inputFile, quiet):
 
 
 	if quiet == False:
-		print "writing csv..."
+		print ("writing csv...")
 
 	#write word counts into a csv
 	try:
@@ -114,13 +114,13 @@ def getWordCloud(inputFile, quiet):
 		#close the text file
 		text_file.close()
 	except:
-		print "Whoops - can't get in the csv file!"
+		print ("Whoops - can't get in the csv file!")
 		sys.exit()
 
 
 
 	if quiet == False:
-		print "writing word cloud text..."
+		print ("writing word cloud text...")
 
 	#write word cloud text
 	try:
@@ -140,12 +140,11 @@ def getWordCloud(inputFile, quiet):
 		#close the text file
 		text_file.close()
 	except:
-		print "Whoops - can't get in the csv file!"
+		print ("Whoops - can't get in the csv file!")
 		sys.exit()
 	
 	if quiet == False:
-		print""
-		print "Done!"
+		print ("\nDone!")
 
 
 ##
@@ -158,7 +157,7 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv, "hqi:")
 	except getopt.GetoptError:
-		print 'python wordcloud_generator.py -i path/to/input/file.txt'
+		print ('python wordcounter.py -i path/to/input/file.txt')
 		sys.exit()
 	
 	# flag for whether to run quietly
@@ -167,7 +166,7 @@ def main(argv):
 	# read in all of the arguments
 	for opt, arg in opts:
 		if opt == '-h':
-			print 'python wordcloud_generator.py -i path/to/input/file.txt'
+			print ('python wordcounter.py -i path/to/input/file.txt')
 			sys.exit()
 		elif opt == '-i':
 			inputFile = arg
@@ -181,11 +180,7 @@ def main(argv):
 		getWordCloud(inputFile, quiet)
 		
 	else:
-		print 'python wordcloud_generator.py -i path/to/input/file.txt'
+		print ('python wordcounter -i path/to/input/file.txt')
 
-##
-# Python nonsense...
-# @author jonnyhuck
-##
 if __name__ == "__main__":
     main(sys.argv[1:])
